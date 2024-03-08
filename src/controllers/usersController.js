@@ -4,7 +4,8 @@ import capacibilitiesService  from "#src/services/capacibilitiesService";
 const exposeController = {
 
     allUsers:async (req,res)=>{
-        const allUsers = await usersService.findAllUsers()
+        const {query} = req
+        const allUsers = await usersService.findAllUsers(query)
         return res.json(allUsers)
     },
     createUser:async (req,res)=>{

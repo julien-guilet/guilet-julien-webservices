@@ -1,11 +1,18 @@
 import Project  from "#src/models/Projects";
+import {parseSortCriteria} from "#src/utils/parseQuery";
+
 
 
 const exposeServices = {
-    findAllProjects: async ()=>{
+
+    findAllProjects: async (query)=>{
         
         try {
-            const   allProjects = await Project.find()
+            var limitRequest = query.limit
+            delete query.limit
+            const   allProjects = await Project .find()
+                                                .sort(parseSortCriteria(query)) 
+                                                .limit(limitRequest);
             return  allProjects
         } catch (error) {
             throw error

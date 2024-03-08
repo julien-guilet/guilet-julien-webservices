@@ -1,27 +1,22 @@
 import User  from "#src/models/Users";
-
+import {parseSortCriteria} from "#src/utils/parseQuery";
 import bcrypt from "bcryptjs"
 
 const exposeServices = {
 
 
-    findAllUsers: async ()=>{
+    findAllUsers: async (query)=>{
         try {
-            const   allUsers = await User.find().populate('capacibilities')
+            var limitRequest = query.limit
+            delete query.limit
+            const   allUsers = await User   .find()
+                                            .sort(parseSortCriteria(query)) 
+                                            .limit(limitRequest)
+                                            .populate('capacibilities')
             return  allUsers
         } catch (error) {
             throw error
         }
-    },
-
-    findOneUserByEmail:async ({email})=>{
-        try {
-            const   findUser = await User.findOne({email})
-            return  findUser
-        } catch (error) {
-            throw error
-        }
-
     },
     
     createUser: async (rawData)=>{

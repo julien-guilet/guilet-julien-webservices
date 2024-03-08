@@ -4,8 +4,8 @@ import capacibilitiesService  from "#src/services/capacibilitiesService";
 const exposeController = {
 
     allProjects:async (req,res)=>{
-
-        const allProjects = await ProjectsService.findAllProjects()
+        const {query} = req
+        const allProjects = await ProjectsService.findAllProjects(query)
         return res.json(allProjects)
     },
     createProject:async (req,res)=>{
