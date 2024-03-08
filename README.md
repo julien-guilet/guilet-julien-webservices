@@ -14,6 +14,7 @@ Pour lancer l'api "npm start", l'api se lance sur le port 3000.
  - Un début de mise en cache (avec redis) a été entamé pour la requête de récupération des projets, mais n'a pas été achevé malheureusement.
 
 ## Réalisation non complète
+ - Pas de travail sur les code erreurs
  - La gestion des rôles est absente.
  - La mise en cache ne fonctionne pas, seul un début de travail est là
 
