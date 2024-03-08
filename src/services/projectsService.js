@@ -7,6 +7,8 @@ const exposeServices = {
 
     findAllProjects: async (query)=>{
         
+        // Console log afin de vérifier sur le service est appelé ou si c'est le cache qui à répondu à la requête
+        console.log("Pas de cache, appel du service")
         try {
             var limitRequest = query.limit
             delete query.limit

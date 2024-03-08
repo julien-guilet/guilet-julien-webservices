@@ -1,18 +1,29 @@
 import ProjectsService from '#src/services/projectsService'
-import capacibilitiesService  from "#src/services/capacibilitiesService";
+import {redisClient,get, del, scanAndDelete} from '#src/services/redisClient';
 
 const exposeController = {
 
     allProjects:async (req,res)=>{
         const {query} = req
+
+        // Mise en cache si la même requête est déjà passée
+        const cachedProjects = await get('projects'+JSON.stringify(query))
+        if(cachedProjects){
+            return res.json(JSON.parse(cachedProjects))
+        }
         const allProjects = await ProjectsService.findAllProjects(query)
+        await redisClient.set('projects'+JSON.stringify(query),JSON.stringify(allProjects))
         return res.json(allProjects)
     },
     createProject:async (req,res)=>{
         const {body}  = req
-        
+
+        // Ici je voulais supprimer toutes les clés redis commençant par projects seulement je n'ai pas terminé :(
+        //await del()
+
         try {
             const registeredProject = await ProjectsService.createProject(body)     
+            
             return res.json(registeredProject)
         } catch (error) {
             return res.sendStatus(400)

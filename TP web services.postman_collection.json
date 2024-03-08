@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "d3cf28ae-1aeb-41dc-af1b-2d7a18ccbfc0",
+		"name": "TP web services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24821037"
+	},
+	"item": [
+		{
+			"name": "Capacibilities",
+			"item": [
+				{
+					"name": "Get all cap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/capacibilities",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"capacibilities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new cap",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Angular\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/capacibilities",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"capacibilities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update cap",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Angular2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/capacibilities/65ead7665d15319ad953b151",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"capacibilities",
+								"65ead7665d15319ad953b151"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete cap",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/capacibilities/65ead7665d15319ad953b151",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"capacibilities",
+								"65ead7665d15319ad953b151"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user with query",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWFkNDAxOWE0NWQyYWQyOTRhZmE2ZiIsImxhc3ROYW1lIjoiSnVsaWVuIiwiZmlyc3ROYW1lIjoiR1VJTEVUIiwiZW1haWwiOiJndWlsZXRqdWxpZW5AZ21haWwuY29tIiwiaWF0IjoxNzA5ODk3NjY3LCJleHAiOjE3MDk5ODQwNjd9.khbo7Nl8L29mGWbG97miX4wg8s17e8cKEBbwBsCDgwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/users?limit=3&updatedAt=-1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "updatedAt",
+									"value": "-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"lastName\" : \"Julien22\", \n    \"firstName\": \"GUILET22\",\n    \"email\": \"guiletjulien@gmail.com2222\",\n    \"password\":\"pwd22\",\n    \"capacibilities\" : [\"65ead7665d15319ad953b151\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"_id\": \"65eadafa54376fa875cd07d1\",\n        \"lastName\": \"UN SUPER NOUVEAU NOM\",\n        \"firstName\": \"GUILET222\",\n        \"email\": \"guiletjulien121@gmail.com\",\n        \"password\": \"$2a$04$GghVIG42bOsbSS3eaF234eGa.XjCkuJ1JHcxMIpeJhozKx9mSHZW2\",\n        \"capacibilities\": [],\n        \"createdAt\": \"2024-03-08T09:31:38.445Z\",\n        \"updatedAt\": \"2024-03-08T09:31:38.445Z\",\n        \"__v\": 0\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/users/65eadafa54376fa875cd07d1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"65eadafa54376fa875cd07d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/users/65eadafa54376fa875cd07d1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"65eadafa54376fa875cd07d1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projets",
+			"item": [
+				{
+					"name": "Get all projects",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/projects",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get projects with query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/projects?limit=3&updatedAt=-1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "updatedAt",
+									"value": "-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"NSBF\",\n    \"description\": \"Un projet ambitieux\",\n    \"team\" : [\"65ead4019a45d2ad294afa6f\",\"65ead94123b436b057f9b371\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/projects",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update project",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"NSBF\",\n    \"description\": \"Un projet presque ambitieux\",\n    \"team\" : [\"65ead4019a45d2ad294afa6f\",\"65ead94123b436b057f9b371\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/projects/65eaed909a002bd23d2b51a0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"65eaed909a002bd23d2b51a0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/projects/65eaed909a002bd23d2b51a0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"65eaed909a002bd23d2b51a0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Welcome to api",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000"
+		}
+	]
+}
