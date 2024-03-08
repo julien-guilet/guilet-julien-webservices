@@ -10,7 +10,7 @@ Pour lancer l'api "npm start", l'api se lance sur le port 3000.
 ## Réalisation
  - Les routes des trois modèles suivants : utilisateurs, projets et capacités.
  - Un système d'authentification avec token fonctionnel, largement inspiré de votre cours étant donné que le système est identique.
- - Les requêtes sont opérationnelles pour la récupération des projets et des utilisateurs. On peut spécifier n'importe quel champ tant que le schéma le permet.
+ - Les query sont opérationnelles pour la récupération des projets et des utilisateurs. On peut spécifier n'importe quel champ tant que le schéma le permet.
  - Un début de mise en cache (avec redis) a été entamé pour la requête de récupération des projets, mais n'a pas été achevé malheureusement.
 
 ## Réalisation non complète
