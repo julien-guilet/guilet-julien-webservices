@@ -10,7 +10,6 @@ const exposeMiddleware = {
             return res.status(401).send('Unauthorized');
         }
         if(accessToken.startsWith('Bearer ')) {
-            // Remove Bearer from string
             const cleanAccess = accessToken.slice(7, accessToken.length);
             try {
                 const verify = verifyJwt(cleanAccess)

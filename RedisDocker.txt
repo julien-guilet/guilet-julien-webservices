@@ -1,0 +1,3 @@
+Commande docker pour lancer redis et permettre la connexion avec l'api
+
+docker run --name redis -d -p 6379:6379 redis:alpine3.16

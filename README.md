@@ -1,21 +1,25 @@
 # TP Web services Julien GUILET
 
+N'étant pas un expert en Node.js, j'ai démarré avec la structure présentée lors de votre cours. 
+Le fichier questions.md est inclus. 
+Le fichier TP web services.postman_collection.json contient tout pour Postman. 
+Un fichier nommé RedisDocker.txt contient la commande docker pour lancer le redis. 
 
+Pour lancer l'api "npm start", l'api se lance sur le port 3000.
 
+## Réalisation
+ - Les routes des trois modèles suivants : utilisateurs, projets et capacités.
+ - Un système d'authentification avec token fonctionnel, largement inspiré de votre cours étant donné que le système est identique.
+ - Les requêtes sont opérationnelles pour la récupération des projets et des utilisateurs. On peut spécifier n'importe quel champ tant que le schéma le permet.
+ - Un début de mise en cache (avec redis) a été entamé pour la requête de récupération des projets, mais n'a pas été achevé malheureusement.
 
-## Ce qui a été fait  
-Les routes des 3 modèles suivants : users, projects et capacibilities.
-Un système d'authentification avec tocken est fonctionnel.
-Les query sont fonctionnel sur la récupèration des projets et users, on peut mettre n'importe quel champs tant que le shema le permet.
-Un début de cache a presque était mis en place sur la requête de récupèration des projets (pas terminé malheusement). 
-
-## Ce qui manque 
-Il n'y a pas de gestion de rôle.
-Le cache non fonctionnel
+## Réalisation non complète
+ - La gestion des rôles est absente.
+ - La mise en cache ne fonctionne pas, seul un début de travail est là
 
 ## Explication du model de données 
-
-Les projets contiennent une "team" qui est une liste de référence 
+Les projets contiennent une "team" qui est une liste de référence d'users.
+Les users contiennent des "capacibilities" qui est une liste de référence de capacibilities.
 
 
 
