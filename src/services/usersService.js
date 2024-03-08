@@ -13,6 +13,17 @@ const exposeServices = {
             throw error
         }
     },
+
+    findOneUserByEmail:async ({email})=>{
+        try {
+            const   findUser = await User.findOne({email})
+            return  findUser
+        } catch (error) {
+            throw error
+        }
+
+    },
+    
     createUser: async (rawData)=>{
 
         const {password} = rawData

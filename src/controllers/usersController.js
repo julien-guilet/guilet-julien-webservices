@@ -9,7 +9,7 @@ const exposeController = {
     },
     createUser:async (req,res)=>{
         const {body}  = req
-        
+        console.log(req.body)
         
         // Si dessous je suis cencé vérifier que toutes les capacibilités existent mais cela n'est pas fonctionnel
         var allCapacibilitiesExists = true;

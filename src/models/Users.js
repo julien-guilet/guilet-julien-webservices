@@ -8,6 +8,7 @@ const userSchema = new Schema({
     email: { type:String,  required:'un nom est obligatoire:', unique:true },
     password:{ type:String },
     capacibilities : [{ type: Schema.Types.ObjectId, ref: 'capacibilities' }],
+    refreshToken:String
 },
 { timestamps: true }
 );
